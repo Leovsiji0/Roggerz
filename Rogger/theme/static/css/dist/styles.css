@@ -1,0 +1,60 @@
+
+
+body {
+  background:black;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.wrap{
+  text-align: center;
+  margin-top:1px;
+}
+
+.banner {
+  display: block;
+  width: 200%;          /* increased length */
+  max-width: 520px;    /* doodle can now stretch wider */
+  height: auto;
+  border-radius: 50px;
+  transition: transform 0.25s;
+}
+
+
+/* optional hover (like Google doodles that animate slightly) */
+.banner:hover {
+  transform: scale(1.03);
+}
+
+.container {
+  text-align: center;
+  margin-top: 1px;
+}
+
+
+input {
+  width: 350px;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  text-decoration-color: white;
+}
+
+button {
+  padding: 12px 30px;
+  background: #19c44b;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #159d42;
+}
