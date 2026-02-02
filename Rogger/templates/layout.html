@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roggerz</title>
-    {% tailwind_css %}
+    {%tailwind_css%}
+  
+
+
+    
 </head>
-<body>
+<body style="background-image: url('{% static "bg.png" %}'); 
+background-size: cover; 
+background-repeat: repeat; 
+background-position: center;
+min-height: 100svh;">
 
     {% block content %}{% endblock %}
 

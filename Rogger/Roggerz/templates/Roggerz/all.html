@@ -2,23 +2,24 @@
 {% load static %}
 
 {% block content %}
+<body>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
 
-<form method="POST" action="{% url 'home' %}">
-    {% csrf_token %}
+        <div class="wrap">
+            <img src="{% static 'eye.png' %}" class="banner">
+            <div class="container">
 
-    <div class="wrap">
-        <img src="{% static 'eye.png' %}" class="banner">
-        <div class="container">
+                <input type="url" name="yt_url" placeholder="music link" required>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
+                    Download
+                </button>
 
-            <input type="url" name="yt_url" placeholder="music link" required>
-            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">
-                Download
-            </button>
-
+            </div>
         </div>
-    </div>
 
-</form>
+    </form>
+</body>
 {% if file_url %}
 <a href="{{ file_url }}" download class="btn">Download MP3</a>
 {% endif %}

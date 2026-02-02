@@ -1,6 +1,6 @@
 from django.http import FileResponse, HttpResponse
 from django.shortcuts import render
-from Rogger.download import down
+from Rogger.download import down,san
 import os
 
 def extract(request):
@@ -10,11 +10,11 @@ def extract(request):
             return HttpResponse("Paste a YouTube link")
 
         try:
-            filepath = down(url)  # returns full path on server
+            filepath = down(url) 
             filename = os.path.basename(filepath)
-            # Send file as download to browser
             return FileResponse(open(filepath, "rb"), as_attachment=True, filename=filename)
         except Exception as e:
+            print("e:",e)
             return HttpResponse(f"Download failed: {e}")
 
     return render(request, "Roggerz/all.html")

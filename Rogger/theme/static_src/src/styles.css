@@ -1,52 +1,75 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-
-body {
-  background:black;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  color: white;
+html, body {
+  height: 100%;
+  background: black;
+  overflow-x: hidden;
+}
+.body {
+  
   font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;  /* STACK ITEMS */
+  align-items: center;     /* CENTER ITEMS */
+  padding-top: 20px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
 }
 
-.wrap{
-  text-align: center;
-  margin-top:1px;
-}
 
+
+/* IMAGE */
 .banner {
-  display: block;
-  width: 200%;          /* increased length */
-  max-width: 520px;    /* doodle can now stretch wider */
+  width: 100%;
+  max-width: 520px;
   height: auto;
-  border-radius: 50px;
+  border-radius: 12px;
   transition: transform 0.25s;
+  display:block;
+  margin: 0 auto; 
 }
 
-
-/* optional hover (like Google doodles that animate slightly) */
 .banner:hover {
   transform: scale(1.03);
 }
 
+/* INPUT + BUTTON CONTAINER */
 .container {
-  text-align: center;
-  margin-top: 1px;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;     
+  margin-top: 25px;
+  
 }
 
-
+/* INPUT */
 input {
-  width: 350px;
+  width: 100%;
   padding: 12px;
   background: black;
   color: white;
+  text-decoration-color: white;
   border: none;
   outline: none;
   border-radius: 4px;
-  text-decoration-color: white;
 }
 
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* BUTTON */
 button {
+  width: 100%;
   padding: 12px 30px;
   background: #19c44b;
   border: none;
@@ -57,4 +80,20 @@ button {
 
 button:hover {
   background: #159d42;
+}
+
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+  .body {
+    padding-top: 15px;
+    min-height: 100svh;
+  }
+  .banner {
+    width: 92%;
+  }
+  input,
+  button {
+    font-size: 15px;
+    width: 92%;
+  }
 }
